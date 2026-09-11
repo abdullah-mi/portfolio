@@ -1,0 +1,586 @@
+@font-face{
+    src: url(/fonts/Inter-VariableFont_opsz\,wght.ttf);
+    font-family: Inter;
+}
+
+@font-face{
+    src: url(/fonts/JetBrainsMono-Regular.woff2);
+    font-family: JetBrainsMono;
+}
+
+@font-face{
+    src: url(/fonts/JetBrainsMono-Bold.woff2);
+    font-family: JetBrainsMono-Bold
+}
+
+@font-face{
+    src: url(/fonts/JetBrainsMono-SemiBold.woff2);
+    font-family: JetBrainsMono-SemiBold
+}
+
+@property --name-band {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: rgb(199, 232, 255);
+}
+
+:root {
+    color-scheme: light;
+    --color-transition: 160ms ease-in-out;
+    transition: --name-band var(--color-transition);
+    --page-bg: rgb(248, 254, 255);
+    --text: rgb(0, 0, 0);
+    --link: rgb(44, 47, 71);
+    --heading: rgb(47, 69, 83);
+    --greeting: rgb(80, 86, 90);
+    --focus: rgb(47, 109, 148);
+    --card-bg: rgb(239, 247, 252);
+    --card-border: rgb(199, 220, 233);
+    --chip-bg: rgb(255, 255, 255);
+    --chip-border: rgb(210, 225, 235);
+    --name-band: rgb(199, 232, 255);
+    --name-text: rgb(0, 24, 41);
+    --nav-bg: rgb(255, 255, 255);
+    --nav-border: rgb(124, 141, 151);
+    --hover-text: rgb(0, 75, 125);
+    --hover-bg: rgb(225, 242, 253);
+    --project-bg: rgb(246, 248, 250);
+    --project-border: rgb(209, 217, 219);
+    --project-shadow: rgb(130, 138, 141);
+    --toggle: rgb(47, 69, 83);
+    --toggle-hover: rgb(0, 55, 90);
+    --footer-bg: rgb(216, 224, 229);
+    --footer-border: rgb(151, 166, 175);
+    --footer-text: rgb(55, 62, 67);
+    --soft-shadow: rgba(47, 69, 83, 0.08);
+    --hover-shadow: rgba(47, 69, 83, 0.14);
+    --bulb-color: rgb(72, 94, 108);
+    --bulb-fill: rgb(184, 210, 225);
+    --bulb-glow: rgba(106, 151, 178, 0.35);
+    --github-border: rgb(10, 12, 13);
+    --github-top: rgb(55, 59, 62);
+    --github-middle: rgb(31, 34, 36);
+    --github-bottom: rgb(18, 20, 21);
+    --github-hover-top: rgb(67, 72, 76);
+    --github-hover-middle: rgb(39, 43, 46);
+    --github-hover-bottom: rgb(23, 25, 27);
+    --github-pressed-top: rgb(17, 19, 20);
+    --github-pressed-bottom: rgb(36, 39, 42);
+    --github-text: rgb(255, 255, 255);
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --page-bg: rgb(17, 24, 29);
+    --text: rgb(229, 236, 240);
+    --link: rgb(166, 198, 218);
+    --heading: rgb(190, 211, 223);
+    --greeting: rgb(168, 179, 185);
+    --focus: rgb(111, 169, 204);
+    --card-bg: rgb(25, 36, 43);
+    --card-border: rgb(53, 75, 88);
+    --chip-bg: rgb(34, 48, 57);
+    --chip-border: rgb(66, 89, 103);
+    --name-band: rgb(36, 62, 77);
+    --name-text: rgb(231, 244, 252);
+    --nav-bg: rgb(24, 34, 41);
+    --nav-border: rgb(82, 103, 116);
+    --hover-text: rgb(209, 235, 250);
+    --hover-bg: rgb(39, 60, 73);
+    --project-bg: rgb(28, 38, 44);
+    --project-border: rgb(63, 79, 89);
+    --project-shadow: rgb(8, 12, 15);
+    --toggle: rgb(184, 207, 220);
+    --toggle-hover: rgb(223, 241, 251);
+    --footer-bg: rgb(12, 18, 22);
+    --footer-border: rgb(55, 72, 82);
+    --footer-text: rgb(177, 190, 198);
+    --soft-shadow: rgba(0, 0, 0, 0.28);
+    --hover-shadow: rgba(0, 0, 0, 0.38);
+    --bulb-color: rgb(183, 199, 208);
+    --bulb-fill: transparent;
+    --bulb-glow: transparent;
+    --github-border: rgb(112, 126, 134);
+    --github-top: rgb(55, 59, 62);
+    --github-middle: rgb(31, 34, 36);
+    --github-bottom: rgb(18, 20, 21);
+    --github-hover-top: rgb(67, 72, 76);
+    --github-hover-middle: rgb(39, 43, 46);
+    --github-hover-bottom: rgb(23, 25, 27);
+    --github-pressed-top: rgb(17, 19, 20);
+    --github-pressed-bottom: rgb(36, 39, 42);
+    --github-text: rgb(255, 255, 255);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--page-bg);
+    color: var(--text);
+    transition: background-color var(--color-transition);
+}
+
+p,
+ul,
+a,
+h2,
+h3 {
+    transition: color var(--color-transition);
+}
+
+.skill-card,
+.skill-list li,
+.site-header,
+#navigation-bar,
+#copyrade-box,
+.site-footer {
+    transition: background-color var(--color-transition),
+        border-color var(--color-transition), box-shadow var(--color-transition);
+}
+
+p{
+    color: var(--text);
+    font-family: JetBrainsMono;
+    font-size: 1.3em;
+    font-style: normal;
+}
+
+.intro {
+    width: fit-content;
+    max-width: calc(100% - 4rem);
+    margin-inline: auto;
+    padding-inline: 2rem;
+    text-align: left;
+}
+
+ul{
+    color: var(--text);
+    font-family: JetBrainsMono;
+    font-size: 1.3em;
+    font-style: normal;
+}
+
+a{
+    color: var(--link);
+    font-family: JetBrainsMono;
+    font-size: 1.3em;
+    font-style: normal;
+}
+
+h2{
+    font-family: Inter, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2.5em;
+    font-weight:700;
+    color: var(--heading);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+h3{
+    font-family: JetBrainsMono;
+    font-size: 1.9em;
+    font-weight:600; 
+    color: var(--text);
+    text-align: left;
+}
+
+#projects-header,
+#skills-header,
+#connect-header {
+    scroll-margin-top: 90px;
+}
+
+.greeting {
+    color: var(--greeting);
+}
+
+.theme-toggle {
+    display: grid;
+    place-items: center;
+    justify-self: end;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--bulb-color);
+    cursor: pointer;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    min-height: 64px;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--nav-border);
+    background-color: var(--page-bg);
+}
+
+.site-logo {
+    position: relative;
+    display: block;
+    width: 80px;
+    aspect-ratio: 904 / 359;
+}
+
+.site-logo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity var(--color-transition);
+}
+
+.logo-light {
+    opacity: 1;
+}
+
+.logo-dark {
+    opacity: 0;
+}
+
+:root[data-theme="dark"] .logo-light {
+    opacity: 0;
+}
+
+:root[data-theme="dark"] .logo-dark {
+    opacity: 1;
+}
+
+.bulb-icon {
+    width: 30px;
+    height: 30px;
+    overflow: visible;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 4px var(--bulb-glow));
+    transition: color var(--color-transition), filter var(--color-transition),
+        transform 160ms ease-in-out;
+}
+
+.bulb-glass {
+    fill: var(--bulb-fill);
+    transition: fill var(--color-transition);
+}
+
+.theme-toggle:hover .bulb-icon {
+    transform: scale(1.08);
+}
+
+.theme-toggle:active .bulb-icon {
+    transform: scale(0.95);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+}
+
+
+.divider-short {
+    border: 0;
+    border-top: 2px solid var(--heading);
+    width: 30ch;
+    margin: 0 auto 1.5rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+    width: min(1000px, calc(100% - 4rem));
+    margin: 0 auto 3rem;
+}
+
+.skill-card {
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--soft-shadow);
+}
+
+.skill-card h3 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    color: var(--heading);
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.95rem;
+}
+
+.skill-list li {
+    padding: 0.45rem 0.7rem;
+    background-color: var(--chip-bg);
+    border: 1px solid var(--chip-border);
+    border-radius: 6px;
+}
+
+#my-name-header {
+    font-family: Inter, 'Lucida Sans', 'Lucida Sans Regular',
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 5em;
+    font-weight: 700;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        var(--name-band) 18%,
+        var(--name-band) 82%,
+        transparent 100%
+    );
+    color: var(--name-text);
+    text-shadow: 0 0 3.25px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    transition: color var(--color-transition);
+}
+
+#navigation-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background: var(--nav-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: 7px;
+}
+
+#navigation-bar a {
+    display: block;
+    padding: 0.65rem 0.9rem;
+    border-radius: 7px;
+    text-decoration: none;
+    transition: color var(--color-transition),
+        background-color var(--color-transition),
+        transform 180ms ease, box-shadow 180ms ease;
+}
+
+#navigation-bar a:hover {
+    color: var(--hover-text);
+    background-color: var(--hover-bg);
+    box-shadow: 0 3px 10px var(--hover-shadow);
+    transform: translateY(-2px);
+}
+
+#navigation-bar a:focus-visible {
+    color: var(--hover-text);
+    background-color: var(--hover-bg);
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        gap: 0.5rem;
+        padding-inline: 0.5rem;
+    }
+
+    .site-logo {
+        width: 54px;
+    }
+
+    #navigation-bar a {
+        padding: 0.55rem 0.45rem;
+        font-size: 0.82rem;
+    }
+}
+
+#copyrade-box{
+    position: relative;
+    box-sizing: border-box;
+    width:62rem;
+    max-width: calc(100% - 2rem);
+    padding: 1rem;
+    background-color: var(--project-bg);
+    border: 1px solid var(--project-border);
+    box-shadow: -2px 2px 2px var(--project-shadow);
+    border-radius: 7px;
+    margin: 0 auto 20px;
+}
+
+#copyrade-box h3 {
+    margin: 0 2.5rem 0.35rem 0;
+    line-height: 1.2;
+}
+
+#copyrade-box > p {
+    margin: 0 0 0.75rem;
+}
+
+.project-toggle {
+    position: absolute;
+    top: 1.4rem;
+    right: 1rem;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--toggle);
+    font-family: JetBrainsMono, monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: none;
+    transition: color var(--color-transition);
+}
+
+.toggle-symbol {
+    display: inline-block;
+    transform: rotate(0deg);
+    transition: transform 240ms ease-in-out;
+}
+
+.project-toggle[aria-expanded="true"] .toggle-symbol {
+    transform: rotate(180deg);
+}
+
+.project-toggle:hover {
+    background: transparent;
+    color: var(--toggle-hover);
+}
+
+.project-toggle:active {
+    background: transparent;
+    box-shadow: none;
+}
+
+.project-toggle:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+}
+
+.project-details p {
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+#github-button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 20px;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--github-border);
+    font-family: Inter;
+    font-size: 0.935rem;
+    font-weight: 600;
+    background: linear-gradient(
+        to bottom,
+        var(--github-top) 0%,
+        var(--github-middle) 48%,
+        var(--github-bottom) 100%
+    );
+    color: var(--github-text);
+    border-radius: 6px;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgb(0, 0, 0);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.22),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.35),
+        0 2px 4px rgba(47, 69, 83, 0.24);
+    cursor: pointer;
+    transition: color var(--color-transition), border-color var(--color-transition),
+        transform 180ms ease, box-shadow 180ms ease;
+}
+
+#github-button:hover {
+    background: linear-gradient(
+        to bottom,
+        var(--github-hover-top) 0%,
+        var(--github-hover-middle) 48%,
+        var(--github-hover-bottom) 100%
+    );
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.28),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.35),
+        0 3px 7px rgba(47, 69, 83, 0.3);
+    transform: translateY(-1px);
+}
+
+#github-button:active {
+    background: linear-gradient(
+        to bottom,
+        var(--github-pressed-top),
+        var(--github-pressed-bottom)
+    );
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.45),
+        0 1px 2px rgba(47, 69, 83, 0.2);
+    transform: translateY(1px);
+}
+
+#github-button:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+}
+
+.github-logo {
+    width: 1.2rem;
+    height: 1.2rem;
+    flex-shrink: 0;
+}
+
+.site-footer {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+    padding: 1.5rem 1rem;
+    border-top: 1px solid var(--footer-border);
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: left;
+}
+
+.connect-links {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 3rem;
+    padding: 0 2rem;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.connect-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.connect-icon {
+    width: 1.1em;
+    height: 1.1em;
+    flex-shrink: 0;
+}
+
+.site-footer p {
+    margin: 0.25rem 0;
+    color: var(--footer-text);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+

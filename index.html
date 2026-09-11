@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/png" href="assets/glasses-favicon.png">
+        <title> Abdullah's Wesbite </title>
+
+        <script>
+            try {
+                document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+            } catch {
+                document.documentElement.dataset.theme = "light";
+            }
+        </script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <a class="site-logo" href="#" aria-label="Abdullah Ijaz — home">
+                <img class="logo-light" src="assets/black-glasses-gradient.png" alt="">
+                <img class="logo-dark" src="assets/white-glasses-gradient.png" alt="">
+            </a>
+
+            <nav id="navigation-bar" aria-label="Primary navigation">
+                <a href="#projects-header">Projects</a>
+                <a href="#skills-header">Skills</a>
+                <a href="#connect-header">Connect</a>
+            </nav>
+
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode"
+                aria-pressed="false" title="Switch to dark mode">
+                <svg class="bulb-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path class="bulb-glass" d="M8.8 15.8c0-1.3-.5-2-1.3-2.9A5.8 5.8 0 1 1 16.5 13c-.8.9-1.3 1.6-1.3 2.9H8.8Z"/>
+                    <path d="M9 18H15M10 21H14"/>
+                </svg>
+            </button>
+        </header>
+
+        <h2 class="greeting"> Hello, I'm </h2>
+            <h1 id="my-name-header">Abdullah Ijaz</h1>
+            
+            <p class="intro">
+                I am an undergraduate student at the University of Toronto, aspiring to become a software engineer.
+                <br>A few fun facts about me: I like cars, cats, and energy drinks; I am 20 years old; I live in Canada.
+            </p>
+
+        <h2 id="projects-header">Projects</h2>
+        <hr class="divider-short">
+            <div id="copyrade-box">
+                <button class="project-toggle" type="button" aria-expanded="false"
+                    aria-controls="copyrade-details" aria-label="Expand Copyrade details">[<span class="toggle-symbol">+</span>]</button>
+                <h3>Copyrade</h3>
+                <p>Your clipboard comrade.</p>
+                <div id="copyrade-details" class="project-details" hidden>
+                    <p>Copyrade is a privacy-focused clipboard continuity app in development that transfers text and images from a mobile device directly to the Windows clipboard. Built with React, TypeScript, Electron, and WebRTC, it is designed to keep clipboard contents out of cloud storage through encrypted peer-to-peer transfers.</p>
+                </div>
+                <a id="github-button"
+                    href="https://github.com/abdullah-mi/copyrade"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <svg class="github-logo" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor" d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.24c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.74-1.55-2.58-.29-5.29-1.29-5.29-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.05 0 0 .97-.31 3.16 1.18A10.97 10.97 0 0 1 12 6.11c.98 0 1.95.13 2.86.39 2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.4-2.72 5.38-5.3 5.67.42.36.79 1.07.79 2.16v3.26c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .7Z"/>
+                    </svg>
+                    View on GitHub
+                </a>
+            </div>
+        
+        <h2 id="skills-header">Skills</h2>
+        <hr class="divider-short">
+        <div class="skills-grid">
+            <section class="skill-card">
+                <h3>Languages</h3>
+                <ul class="skill-list">
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>C</li>
+                    <li>TypeScript</li>
+                    <li>JavaScript</li>
+                    <li>C#</li>
+                    <li>Bash</li>
+                    <li>HTML/CSS</li>
+                    <li>RISC-V Assembly</li>
+                </ul>
+            </section>
+
+            <section class="skill-card">
+                <h3>Frameworks &amp; Technologies</h3>
+                <ul class="skill-list">
+                    <li>React</li>
+                    <li>Electron</li>
+                    <li>JavaFX</li>
+                    <li>Java Swing</li>
+                    <li>WebRTC</li>
+                </ul>
+            </section>
+
+            <section class="skill-card">
+                <h3>Developer Tools</h3>
+                <ul class="skill-list">
+                    <li>Git</li>
+                    <li>GitHub</li>
+                    <li>Linux/Unix</li>
+                    <li>GDB</li>
+                    <li>Make</li>
+                    <li>pytest</li>
+                    <li>JUnit</li>
+                    <li>Visual Studio Code</li>
+                    <li>IntelliJ IDEA</li>
+                    <li>PyCharm</li>
+                </ul>
+            </section>
+        </div>
+
+        
+        <h2 id="connect-header">Connect</h2>
+        <hr class="divider-short">
+        <div class="connect-links">
+            <a
+                href = "https://linkedin.com/in/abdullah-m-ijaz"
+                target = "_blank"
+                rel="noopener noreferrer"
+                title = "Opens my LinkedIn page in a new tab">
+                ↗ LinkedIn
+                <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.04H3.54V8.98H7.1v11.47Z"/>
+                </svg>
+            </a>
+            <br>
+            <a
+                href = "https://github.com/abdullah-mi"
+                target = "_blank"
+                rel="noopener noreferrer"
+                title = "Opens my GitHub page in a new tab">
+                ↗ GitHub
+                <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.24c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.74-1.55-2.58-.29-5.29-1.29-5.29-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.05 0 0 .97-.31 3.16 1.18A10.97 10.97 0 0 1 12 6.11c.98 0 1.95.13 2.86.39 2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.4-2.72 5.38-5.3 5.67.42.36.79 1.07.79 2.16v3.26c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .7Z"/>
+                </svg>
+            </a>
+            <br>
+            <a
+                href = "mailto:AbdullahIjaz.M@gmail.com"
+                title = "Email me">
+                ↗ AbdullahIjaz.M@gmail.com
+                <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 5h18v14H3V5Zm0 1 9 7 9-7"/>
+                </svg>
+            </a>
+        </div>
+
+        <footer class="site-footer">
+            <p>&copy; <span id="copyright-year"></span> Abdullah Ijaz. All rights reserved.</p>
+            <p>Designed and built with HTML, CSS, and JavaScript.</p>
+        </footer>
+
+        <script>
+            document.querySelector("#copyright-year").textContent = new Date().getFullYear();
+
+            const themeToggle = document.querySelector(".theme-toggle");
+
+            function applyTheme(theme, savePreference = true) {
+                const isDark = theme === "dark";
+                document.documentElement.dataset.theme = theme;
+                themeToggle.setAttribute("aria-pressed", String(isDark));
+                themeToggle.setAttribute(
+                    "aria-label",
+                    isDark ? "Switch to light mode" : "Switch to dark mode"
+                );
+                themeToggle.title = isDark ? "Switch to light mode" : "Switch to dark mode";
+
+                if (savePreference) {
+                    try {
+                        localStorage.setItem("theme", theme);
+                    } catch {
+                        // The theme still works when browser storage is unavailable.
+                    }
+                }
+            }
+
+            applyTheme(document.documentElement.dataset.theme || "light", false);
+
+            themeToggle.addEventListener("click", () => {
+                const nextTheme = document.documentElement.dataset.theme === "dark"
+                    ? "light"
+                    : "dark";
+                applyTheme(nextTheme);
+            });
+
+            const copyradeToggle = document.querySelector(".project-toggle");
+            const copyradeBox = document.querySelector("#copyrade-box");
+            const copyradeDetails = document.querySelector("#copyrade-details");
+            const copyradeToggleSymbol = document.querySelector(".toggle-symbol");
+            const copyradeGitHubButton = document.querySelector("#github-button");
+            let toggleIsAnimating = false;
+
+            copyradeToggle.addEventListener("click", () => {
+                if (toggleIsAnimating) return;
+
+                toggleIsAnimating = true;
+                const isExpanded = copyradeToggle.getAttribute("aria-expanded") === "true";
+                const startHeight = copyradeBox.offsetHeight;
+                copyradeToggle.setAttribute("aria-expanded", String(!isExpanded));
+                copyradeToggle.setAttribute(
+                    "aria-label",
+                    isExpanded ? "Expand Copyrade details" : "Collapse Copyrade details"
+                );
+                if (!isExpanded) {
+                    copyradeDetails.hidden = false;
+                }
+
+                let endHeight;
+                if (isExpanded) {
+                    copyradeDetails.hidden = true;
+                    endHeight = copyradeBox.offsetHeight;
+                    copyradeDetails.hidden = false;
+                } else {
+                    endHeight = copyradeBox.offsetHeight;
+                }
+
+                const contentShift = Math.abs(endHeight - startHeight);
+                const motionOptions = {
+                    duration: 240,
+                    easing: "ease-in-out",
+                    fill: "both"
+                };
+
+                copyradeBox.style.overflow = "hidden";
+                const boxAnimation = copyradeBox.animate(
+                    [
+                        { height: `${startHeight}px` },
+                        { height: `${endHeight}px` }
+                    ],
+                    motionOptions
+                );
+
+                const detailsAnimation = copyradeDetails.animate(
+                    isExpanded
+                        ? [
+                            { opacity: 1, transform: "translateY(0)" },
+                            { opacity: 0, transform: "translateY(-6px)" }
+                        ]
+                        : [
+                            { opacity: 0, transform: "translateY(-6px)" },
+                            { opacity: 1, transform: "translateY(0)" }
+                        ],
+                    motionOptions
+                );
+
+                const githubAnimation = copyradeGitHubButton.animate(
+                    isExpanded
+                        ? [
+                            { transform: "translateY(0)" },
+                            { transform: `translateY(-${contentShift}px)` }
+                        ]
+                        : [
+                            { transform: `translateY(-${contentShift}px)` },
+                            { transform: "translateY(0)" }
+                        ],
+                    motionOptions
+                );
+
+                window.setTimeout(() => {
+                    copyradeToggleSymbol.textContent = isExpanded ? "+" : "-";
+                }, 120);
+
+                boxAnimation.finished.then(() => {
+                    if (isExpanded) {
+                        copyradeDetails.hidden = true;
+                    }
+                    detailsAnimation.cancel();
+                    githubAnimation.cancel();
+                    boxAnimation.cancel();
+                    copyradeBox.style.overflow = "";
+                    toggleIsAnimating = false;
+                });
+            });
+        </script>
+    </body>
+
+</html>
