@@ -351,7 +351,25 @@ h3{
     text-align: center;
     margin-top: 20px;
     margin-bottom: 50px;
+    min-height: 1.2em;
     transition: color var(--color-transition);
+}
+
+.typing-cursor {
+    display: none;
+    margin-left: 0.04em;
+    font-weight: 400;
+}
+
+#my-name-header.typing-active .typing-cursor {
+    display: inline-block;
+    animation: cursor-blink 500ms steps(1, end) infinite;
+}
+
+@keyframes cursor-blink {
+    50% {
+        opacity: 0;
+    }
 }
 
 #navigation-bar {

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="icon" type="image/png" href="assets/glasses-favicon.png">
-        <title> Abdullah's Wesbite </title>
+        <title> Abdullah's Portfolio </title>
 
         <script>
             try {
@@ -41,7 +41,10 @@
         </header>
 
         <h2 class="greeting"> Hello, I'm </h2>
-            <h1 id="my-name-header">Abdullah Ijaz</h1>
+            <h1 id="my-name-header" data-name="Abdullah Ijaz" aria-label="Abdullah Ijaz">
+                <span id="typed-name" aria-hidden="true"></span><span class="typing-cursor" aria-hidden="true">|</span>
+                <noscript>Abdullah Ijaz</noscript>
+            </h1>
             
             <p class="intro">
                 I am an undergraduate student at the University of Toronto, aspiring to become a software engineer.
@@ -158,6 +161,52 @@
 
         <script>
             document.querySelector("#copyright-year").textContent = new Date().getFullYear();
+
+            const nameHeader = document.querySelector("#my-name-header");
+            const typedName = document.querySelector("#typed-name");
+            const fullName = nameHeader.dataset.name;
+
+            async function typeName() {
+                if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    typedName.textContent = fullName;
+                    return;
+                }
+
+                const wait = (milliseconds) => new Promise((resolve) => {
+                    window.setTimeout(resolve, milliseconds);
+                });
+                const letterIndexes = [...fullName]
+                    .map((character, index) => /[a-z]/i.test(character) ? index : -1)
+                    .filter((index) => index > 0 && index < fullName.length - 1);
+                const typoIndex = letterIndexes[Math.floor(Math.random() * letterIndexes.length)];
+
+                nameHeader.classList.add("typing-active");
+
+                for (let index = 0; index < fullName.length; index += 1) {
+                    const correctCharacter = fullName[index];
+
+                    if (index === typoIndex) {
+                        const alphabet = correctCharacter === correctCharacter.toUpperCase()
+                            ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            : "abcdefghijklmnopqrstuvwxyz";
+                        const characterPosition = alphabet.indexOf(correctCharacter);
+                        const wrongCharacter = alphabet[(characterPosition + 1) % alphabet.length];
+
+                        typedName.textContent += wrongCharacter;
+                        await wait(300);
+                        typedName.textContent = typedName.textContent.slice(0, -1);
+                        await wait(180);
+                    }
+
+                    typedName.textContent += correctCharacter;
+                    await wait(55);
+                }
+
+                await wait(450);
+                nameHeader.classList.remove("typing-active");
+            }
+
+            typeName();
 
             const themeToggle = document.querySelector(".theme-toggle");
 
