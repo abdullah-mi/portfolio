@@ -134,7 +134,7 @@ h3 {
 .skill-list li,
 .site-header,
 #navigation-bar,
-#copyrade-box,
+.project-card,
 .site-footer {
     transition: background-color var(--color-transition),
         border-color var(--color-transition), box-shadow var(--color-transition);
@@ -422,25 +422,38 @@ h3{
     }
 }
 
-#copyrade-box{
+.projects-list {
+    display: grid;
+    gap: 1rem;
+    width: min(62rem, calc(100% - 2rem));
+    margin: 0 auto 3rem;
+}
+
+.svg-definitions {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.project-card {
     position: relative;
     box-sizing: border-box;
-    width:62rem;
-    max-width: calc(100% - 2rem);
+    width: 100%;
     padding: 1rem;
     background-color: var(--project-bg);
     border: 1px solid var(--project-border);
     box-shadow: -2px 2px 2px var(--project-shadow);
     border-radius: 7px;
-    margin: 0 auto 20px;
+    margin: 0;
 }
 
-#copyrade-box h3 {
+.project-card h3 {
     margin: 0 2.5rem 0.35rem 0;
     line-height: 1.2;
 }
 
-#copyrade-box > p {
+.project-card > p {
     margin: 0 0 0.75rem;
 }
 
@@ -496,7 +509,13 @@ h3{
     line-height: 1.5;
 }
 
-#github-button{
+.project-details .private-notice {
+    color: var(--greeting);
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.github-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -526,7 +545,7 @@ h3{
         transform 180ms ease, box-shadow 180ms ease;
 }
 
-#github-button:hover {
+.github-button:hover {
     background: linear-gradient(
         to bottom,
         var(--github-hover-top) 0%,
@@ -540,7 +559,7 @@ h3{
     transform: translateY(-1px);
 }
 
-#github-button:active {
+.github-button:active {
     background: linear-gradient(
         to bottom,
         var(--github-pressed-top),
@@ -552,7 +571,7 @@ h3{
     transform: translateY(1px);
 }
 
-#github-button:focus-visible {
+.github-button:focus-visible {
     outline: 2px solid var(--focus);
     outline-offset: 3px;
 }
