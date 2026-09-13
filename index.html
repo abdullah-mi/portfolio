@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +19,8 @@
     </head>
 
     <body>
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
         <header class="site-header">
             <a class="site-logo" href="#" aria-label="Abdullah Ijaz — home">
                 <img class="logo-light" src="assets/black-glasses-gradient.png" alt="">
@@ -40,7 +42,8 @@
             </button>
         </header>
 
-        <h2 class="greeting"> Hello, I'm </h2>
+        <main id="main-content">
+        <p class="greeting">Hello, I'm</p>
             <h1 id="my-name-header" data-name="Abdullah Ijaz" aria-label="Abdullah Ijaz">
                 <span id="typed-name" aria-hidden="true"></span><span class="typing-cursor" aria-hidden="true">|</span>
                 <noscript>Abdullah Ijaz</noscript>
@@ -71,7 +74,8 @@
                 <a class="github-button"
                     href="https://github.com/abdullah-mi/copyrade"
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                    aria-label="View on GitHub: Copyrade (opens in a new tab)">
                     <svg class="github-logo" viewBox="0 0 24 24" aria-hidden="true">
                         <use href="#github-mark"/>
                     </svg>
@@ -89,7 +93,8 @@
                     <p class="private-notice">Private repository &mdash; source code is available upon request.</p>
                 </div>
                 <a class="github-button" href="https://github.com/abdullah-mi/mysh"
-                    target="_blank" rel="noopener noreferrer" title="Private GitHub repository">
+                    target="_blank" rel="noopener noreferrer" title="Private GitHub repository"
+                    aria-label="Private repository: mysh on GitHub (opens in a new tab)">
                     <svg class="github-logo" viewBox="0 0 24 24" aria-hidden="true"><use href="#github-mark"/></svg>
                     Private repository
                 </a>
@@ -103,14 +108,21 @@
                 <div id="paint-details" class="project-details" hidden>
                     <p>A collaborative course project built with Java 22, JavaFX, Maven, and FXML. The application draws shapes, polylines, freehand strokes, and formatted text; provides configurable colors, outlines, and erasers; and supports copy, cut, paste, undo, redo, and canvas customization. Its MVC-inspired design separates drawing behaviour into strategy classes and uses a factory to select tools.</p>
                     <figure class="paint-preview">
-                        <img src="assets/paint-application-demo.gif"
-                            width="348" height="396" alt="Animated demonstration of the Paint Application">
+                        <video id="paint-demo-video" src="assets/paint-application-demo.mp4"
+                            poster="assets/paint-application-demo-poster.png" width="348" height="396"
+                            preload="metadata" loop muted playsinline
+                            aria-label="Paint Application window demonstrating drawing and editing tools">
+                            Your browser does not support the Paint Application demo video.
+                        </video>
                         <figcaption>Paint Application demo</figcaption>
+                        <button class="paint-demo-toggle" type="button" aria-controls="paint-demo-video"
+                            aria-pressed="false">Play animation</button>
                     </figure>
                     <p class="private-notice">Private repository &mdash; source code is available upon request.</p>
                 </div>
                 <a class="github-button" href="https://github.com/abdullah-mi/Paint-Application"
-                    target="_blank" rel="noopener noreferrer" title="Private GitHub repository">
+                    target="_blank" rel="noopener noreferrer" title="Private GitHub repository"
+                    aria-label="Private repository: Paint Application on GitHub (opens in a new tab)">
                     <svg class="github-logo" viewBox="0 0 24 24" aria-hidden="true"><use href="#github-mark"/></svg>
                     Private repository
                 </a>
@@ -126,7 +138,8 @@
                     <p class="private-notice">Private repository &mdash; source code is available upon request.</p>
                 </div>
                 <a class="github-button" href="https://github.com/abdullah-mi/Huffman-Compression/tree/main"
-                    target="_blank" rel="noopener noreferrer" title="Private GitHub repository">
+                    target="_blank" rel="noopener noreferrer" title="Private GitHub repository"
+                    aria-label="Private repository: Huffman Compression on GitHub (opens in a new tab)">
                     <svg class="github-logo" viewBox="0 0 24 24" aria-hidden="true"><use href="#github-mark"/></svg>
                     Private repository
                 </a>
@@ -142,7 +155,8 @@
                     <p class="private-notice">Private repository &mdash; source code is available upon request.</p>
                 </div>
                 <a class="github-button" href="https://github.com/abdullah-mi/othello"
-                    target="_blank" rel="noopener noreferrer" title="Private GitHub repository">
+                    target="_blank" rel="noopener noreferrer" title="Private GitHub repository"
+                    aria-label="Private repository: Othello on GitHub (opens in a new tab)">
                     <svg class="github-logo" viewBox="0 0 24 24" aria-hidden="true"><use href="#github-mark"/></svg>
                     Private repository
                 </a>
@@ -203,6 +217,7 @@
                 href = "https://linkedin.com/in/abdullah-m-ijaz"
                 target = "_blank"
                 rel="noopener noreferrer"
+                aria-label="Open Abdullah Ijaz's LinkedIn profile (opens in a new tab)"
                 title = "Opens my LinkedIn page in a new tab">
                 ↗ LinkedIn
                 <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -214,6 +229,7 @@
                 href = "https://github.com/abdullah-mi"
                 target = "_blank"
                 rel="noopener noreferrer"
+                aria-label="Open Abdullah Ijaz's GitHub profile (opens in a new tab)"
                 title = "Opens my GitHub page in a new tab">
                 ↗ GitHub
                 <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -230,6 +246,7 @@
                 </svg>
             </a>
         </div>
+        </main>
 
         <footer class="site-footer">
             <p>&copy; <span id="copyright-year"></span> Abdullah Ijaz. All rights reserved.</p>
@@ -317,6 +334,35 @@
 
             const projectCards = [...document.querySelectorAll(".project-card")];
             const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+            const paintDemoVideo = document.querySelector("#paint-demo-video");
+            const paintDemoToggle = document.querySelector(".paint-demo-toggle");
+
+            function setPaintDemoPlaying(shouldPlay) {
+                if (shouldPlay) {
+                    const playRequest = paintDemoVideo.play();
+                    if (playRequest) {
+                        playRequest.catch(() => setPaintDemoButton(false));
+                    }
+                } else {
+                    paintDemoVideo.pause();
+                }
+            }
+
+            function setPaintDemoButton(isPlaying) {
+                paintDemoToggle.setAttribute("aria-pressed", String(isPlaying));
+                paintDemoToggle.textContent = isPlaying ? "Pause animation" : "Play animation";
+            }
+
+            paintDemoToggle.addEventListener("click", () => {
+                setPaintDemoPlaying(paintDemoVideo.paused);
+            });
+
+            paintDemoVideo.addEventListener("play", () => setPaintDemoButton(true));
+            paintDemoVideo.addEventListener("pause", () => setPaintDemoButton(false));
+
+            paintDemoVideo.pause();
+            paintDemoVideo.currentTime = 0;
+            setPaintDemoButton(false);
 
             function animateProject(card, shouldExpand) {
                 const toggle = card.querySelector(".project-toggle");
@@ -328,6 +374,18 @@
 
                 if (isExpanded === shouldExpand || card.dataset.animating === "true") {
                     return;
+                }
+
+                if (card.contains(paintDemoVideo)) {
+                    if (shouldExpand) {
+                        paintDemoVideo.currentTime = 0;
+
+                        if (!prefersReducedMotion.matches) {
+                            setPaintDemoPlaying(true);
+                        }
+                    } else {
+                        setPaintDemoPlaying(false);
+                    }
                 }
 
                 toggle.setAttribute("aria-expanded", String(shouldExpand));

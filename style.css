@@ -122,6 +122,27 @@ body{
     transition: background-color var(--color-transition);
 }
 
+main {
+    width: 100%;
+}
+
+.skip-link {
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 1000;
+    padding: 0.65rem 0.85rem;
+    border: 2px solid var(--focus);
+    border-radius: 4px;
+    background-color: var(--page-bg);
+    color: var(--text);
+    transform: translateY(calc(-100% - 1rem));
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
 p,
 ul,
 a,
@@ -193,7 +214,13 @@ h3{
 }
 
 .greeting {
+    margin: 0.83em 0 5px;
     color: var(--greeting);
+    font-family: Inter, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
 }
 
 .theme-toggle {
@@ -337,7 +364,7 @@ h3{
 #my-name-header {
     font-family: Inter, 'Lucida Sans', 'Lucida Sans Regular',
         'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 5em;
+    font-size: clamp(2.5rem, 10vw, 5rem);
     font-weight: 700;
     background: linear-gradient(
         to right,
@@ -408,6 +435,7 @@ h3{
 
 @media (max-width: 600px) {
     .site-header {
+        grid-template-columns: 1fr auto;
         gap: 0.5rem;
         padding-inline: 0.5rem;
     }
@@ -419,6 +447,17 @@ h3{
     #navigation-bar a {
         padding: 0.55rem 0.45rem;
         font-size: 0.82rem;
+    }
+
+    #navigation-bar {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    #projects-header,
+    #skills-header,
+    #connect-header {
+        scroll-margin-top: 135px;
     }
 }
 
@@ -449,7 +488,7 @@ h3{
 }
 
 .project-card h3 {
-    margin: 0 2.5rem 0.35rem 0;
+    margin: 0 3.25rem 0.35rem 0;
     line-height: 1.2;
 }
 
@@ -459,11 +498,13 @@ h3{
 
 .project-toggle {
     position: absolute;
-    top: 1.4rem;
-    right: 1rem;
-    display: inline-block;
-    width: auto;
-    height: auto;
+    top: 0.75rem;
+    right: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
     padding: 0;
     border: 0;
     border-radius: 0;
@@ -473,6 +514,7 @@ h3{
     font-size: 1rem;
     font-weight: 600;
     line-height: 1;
+    white-space: nowrap;
     cursor: pointer;
     box-shadow: none;
     transition: color var(--color-transition);
@@ -521,7 +563,7 @@ h3{
     margin: 0.25rem 0 0.85rem;
 }
 
-.paint-preview img {
+.paint-preview video {
     display: block;
     width: min(348px, 100%);
     height: auto;
@@ -534,6 +576,29 @@ h3{
     color: var(--greeting);
     font-family: JetBrainsMono, monospace;
     font-size: 0.75rem;
+}
+
+.paint-demo-toggle {
+    min-height: 36px;
+    margin-top: 0.55rem;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid var(--project-border);
+    border-radius: 4px;
+    background-color: var(--chip-bg);
+    color: var(--text);
+    font-family: JetBrainsMono, monospace;
+    cursor: pointer;
+}
+
+.paint-demo-toggle:hover {
+    background-color: var(--hover-bg);
+}
+
+.paint-demo-toggle:focus-visible,
+.site-logo:focus-visible,
+.connect-links a:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
 }
 
 .github-button {
@@ -640,5 +705,16 @@ h3{
     color: var(--footer-text);
     font-size: 0.85rem;
     line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
