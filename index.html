@@ -83,9 +83,9 @@
                 <button class="project-toggle" type="button" aria-expanded="false"
                     aria-controls="mysh-details" aria-label="Expand Unix shell details">[<span class="toggle-symbol">+</span>]</button>
                 <h3>Unix Shell / mysh</h3>
-                <p>A Unix-style command-line shell.</p>
+                <p>A Unix-like shell written in C.</p>
                 <div id="mysh-details" class="project-details" hidden>
-                    <p>An implementation of a Unix-style shell created to explore systems programming, command execution, and operating-system interfaces.</p>
+                    <p>mysh is a Unix-like shell built in C with POSIX system calls. It supports external commands, multi-stage pipelines, background jobs, shell-local variables, signal forwarding, filesystem and text-processing built-ins, and a concurrent TCP chat server and client. The project uses a sanitizer-enabled Make build and a Python integration suite covering command execution, pipelines, jobs, signals, and networking.</p>
                     <p class="private-notice">Private repository &mdash; source code is available upon request.</p>
                 </div>
                 <a class="github-button" href="https://github.com/abdullah-mi/mysh"
@@ -99,9 +99,14 @@
                 <button class="project-toggle" type="button" aria-expanded="false"
                     aria-controls="paint-details" aria-label="Expand Paint Application details">[<span class="toggle-symbol">+</span>]</button>
                 <h3>Paint Application</h3>
-                <p>An interactive desktop drawing application.</p>
+                <p>A collaborative JavaFX desktop drawing application.</p>
                 <div id="paint-details" class="project-details" hidden>
-                    <p>A graphical paint application for creating and editing drawings through an interactive desktop interface.</p>
+                    <p>A collaborative course project built with Java 22, JavaFX, Maven, and FXML. The application draws shapes, polylines, freehand strokes, and formatted text; provides configurable colors, outlines, and erasers; and supports copy, cut, paste, undo, redo, and canvas customization. Its MVC-inspired design separates drawing behaviour into strategy classes and uses a factory to select tools.</p>
+                    <figure class="paint-preview">
+                        <img src="assets/paint-application-demo.gif"
+                            width="348" height="396" alt="Animated demonstration of the Paint Application">
+                        <figcaption>Paint Application demo</figcaption>
+                    </figure>
                     <p class="private-notice">Private repository &mdash; source code is available upon request.</p>
                 </div>
                 <a class="github-button" href="https://github.com/abdullah-mi/Paint-Application"
@@ -115,9 +120,9 @@
                 <button class="project-toggle" type="button" aria-expanded="false"
                     aria-controls="huffman-details" aria-label="Expand Huffman Compression details">[<span class="toggle-symbol">+</span>]</button>
                 <h3>Huffman Compression</h3>
-                <p>Lossless compression using Huffman coding.</p>
+                <p>Lossless binary file compression in Python.</p>
                 <div id="huffman-details" class="project-details" hidden>
-                    <p>An implementation of Huffman coding that explores frequency analysis, binary trees, variable-length codes, and lossless compression and decompression.</p>
+                    <p>A Python implementation of lossless file compression and decompression using Huffman coding. It builds byte-frequency tables and Huffman trees, generates prefix-free binary codes, compresses arbitrary binary files, and reconstructs both the tree and original data during decompression. Unit, property, and round-trip tests verify exact recovery of text and bitmap fixtures with pytest.</p>
                     <p class="private-notice">Private repository &mdash; source code is available upon request.</p>
                 </div>
                 <a class="github-button" href="https://github.com/abdullah-mi/Huffman-Compression/tree/main"
@@ -131,9 +136,9 @@
                 <button class="project-toggle" type="button" aria-expanded="false"
                     aria-controls="othello-details" aria-label="Expand Othello details">[<span class="toggle-symbol">+</span>]</button>
                 <h3>Othello</h3>
-                <p>A playable implementation of the classic strategy game.</p>
+                <p>A console Othello game with human and computer players.</p>
                 <div id="othello-details" class="project-details" hidden>
-                    <p>An implementation of Othello, also known as Reversi, focused on board state, legal moves, turn handling, and the game&rsquo;s piece-flipping rules.</p>
+                    <p>A console implementation of Othello (Reversi) built with Java 22 and Maven. It models an 8&times;8 board, validates moves in all eight directions, flips tokens, handles skipped turns, and detects wins and draws. Human, random, and greedy players support several matchups, while 10,000-game simulations compare strategies and JUnit 5 tests cover the core model and player classes.</p>
                     <p class="private-notice">Private repository &mdash; source code is available upon request.</p>
                 </div>
                 <a class="github-button" href="https://github.com/abdullah-mi/othello"

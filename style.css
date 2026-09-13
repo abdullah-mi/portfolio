@@ -515,6 +515,27 @@ h3{
     font-style: italic;
 }
 
+.paint-preview {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0.25rem 0 0.85rem;
+}
+
+.paint-preview img {
+    display: block;
+    width: min(348px, 100%);
+    height: auto;
+    border: 1px solid var(--project-border);
+    border-radius: 4px;
+}
+
+.paint-preview figcaption {
+    margin-top: 0.35rem;
+    color: var(--greeting);
+    font-family: JetBrainsMono, monospace;
+    font-size: 0.75rem;
+}
+
 .github-button {
     display: inline-flex;
     align-items: center;
