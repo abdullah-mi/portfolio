@@ -65,11 +65,40 @@
 
             <article class="project-card">
                 <button class="project-toggle" type="button" aria-expanded="false"
+                    aria-controls="paint-details" aria-label="Expand Paint Application details">[<span class="toggle-symbol">+</span>]</button>
+                <h3>Paint Application</h3>
+                <p>A collaborative JavaFX desktop drawing application.</p>
+                <div id="paint-details" class="project-details" hidden>
+                    <p>A collaborative course project built with Java 22, JavaFX, Maven, and FXML. The application draws shapes, polylines, freehand strokes, and formatted text; provides configurable colors, outlines, and erasers; and supports copy, cut, paste, undo, redo, and canvas customization. Its MVC-inspired design separates drawing behaviour into strategy classes and uses a factory to select tools.</p>
+                    <figure class="paint-preview">
+                        <video id="paint-demo-video" src="assets/paint-application-demo.mp4"
+                            poster="assets/paint-application-demo-poster.png" width="348" height="396"
+                            preload="metadata" loop muted playsinline
+                            aria-label="Paint Application window demonstrating drawing and editing tools">
+                            Your browser does not support the Paint Application demo video.
+                        </video>
+                        <figcaption>Paint Application demo</figcaption>
+                        <button class="paint-demo-toggle" type="button" aria-controls="paint-demo-video"
+                            aria-pressed="false">Play animation</button>
+                    </figure>
+                    <p class="private-notice">Private repository &mdash; source code is available upon request.</p>
+                </div>
+                <a class="github-button" href="https://github.com/abdullah-mi/Paint-Application"
+                    target="_blank" rel="noopener noreferrer" title="Private GitHub repository"
+                    aria-label="Private repository: Paint Application on GitHub (opens in a new tab)">
+                    <svg class="github-logo" viewBox="0 0 24 24" aria-hidden="true"><use href="#github-mark"/></svg>
+                    Private repository
+                </a>
+            </article>
+
+            <article class="project-card">
+                <button class="project-toggle" type="button" aria-expanded="false"
                     aria-controls="copyrade-details" aria-label="Expand Copyrade details">[<span class="toggle-symbol">+</span>]</button>
                 <h3>Copyrade</h3>
                 <p>Your clipboard comrade.</p>
                 <div id="copyrade-details" class="project-details" hidden>
                     <p>Copyrade is a privacy-focused clipboard continuity app in development that transfers text and images from a mobile device directly to the Windows clipboard. Built with React, TypeScript, Electron, and WebRTC, it is designed to keep clipboard contents out of cloud storage through encrypted peer-to-peer transfers.</p>
+                    <p class="private-notice">Currently in development</p>
                 </div>
                 <a class="github-button"
                     href="https://github.com/abdullah-mi/copyrade"
@@ -95,34 +124,6 @@
                 <a class="github-button" href="https://github.com/abdullah-mi/mysh"
                     target="_blank" rel="noopener noreferrer" title="Private GitHub repository"
                     aria-label="Private repository: mysh on GitHub (opens in a new tab)">
-                    <svg class="github-logo" viewBox="0 0 24 24" aria-hidden="true"><use href="#github-mark"/></svg>
-                    Private repository
-                </a>
-            </article>
-
-            <article class="project-card">
-                <button class="project-toggle" type="button" aria-expanded="false"
-                    aria-controls="paint-details" aria-label="Expand Paint Application details">[<span class="toggle-symbol">+</span>]</button>
-                <h3>Paint Application</h3>
-                <p>A collaborative JavaFX desktop drawing application.</p>
-                <div id="paint-details" class="project-details" hidden>
-                    <p>A collaborative course project built with Java 22, JavaFX, Maven, and FXML. The application draws shapes, polylines, freehand strokes, and formatted text; provides configurable colors, outlines, and erasers; and supports copy, cut, paste, undo, redo, and canvas customization. Its MVC-inspired design separates drawing behaviour into strategy classes and uses a factory to select tools.</p>
-                    <figure class="paint-preview">
-                        <video id="paint-demo-video" src="assets/paint-application-demo.mp4"
-                            poster="assets/paint-application-demo-poster.png" width="348" height="396"
-                            preload="metadata" loop muted playsinline
-                            aria-label="Paint Application window demonstrating drawing and editing tools">
-                            Your browser does not support the Paint Application demo video.
-                        </video>
-                        <figcaption>Paint Application demo</figcaption>
-                        <button class="paint-demo-toggle" type="button" aria-controls="paint-demo-video"
-                            aria-pressed="false">Play animation</button>
-                    </figure>
-                    <p class="private-notice">Private repository &mdash; source code is available upon request.</p>
-                </div>
-                <a class="github-button" href="https://github.com/abdullah-mi/Paint-Application"
-                    target="_blank" rel="noopener noreferrer" title="Private GitHub repository"
-                    aria-label="Private repository: Paint Application on GitHub (opens in a new tab)">
                     <svg class="github-logo" viewBox="0 0 24 24" aria-hidden="true"><use href="#github-mark"/></svg>
                     Private repository
                 </a>
